@@ -16,7 +16,7 @@ import java.sql.Statement;
  * @author Ridotoji Pham
  */
 public class ConnectionDB {
-    String SQLConnection = "jdbc:sqlserver://DESKTOP-DAF0S0Q"
+    String SQLConnection = "jdbc:sqlserver://HOANGDINHNGUYEN\\SQLEXPRESS"
             + ";databaseName=QuanLyBanHang;user=sa;password=123;";
      static Connection conn;
      public  ConnectionDB(){
