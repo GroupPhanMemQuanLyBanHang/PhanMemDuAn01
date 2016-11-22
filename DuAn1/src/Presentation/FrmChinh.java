@@ -679,6 +679,11 @@ public class FrmChinh extends javax.swing.JFrame {
 
         mnclear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Next.png"))); // NOI18N
         mnclear.setText("CLEAR");
+        mnclear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnclearActionPerformed(evt);
+            }
+        });
         pmndonhang.add(mnclear);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -5070,6 +5075,11 @@ public class FrmChinh extends javax.swing.JFrame {
        //gọi hàm đổ dữ liệu sau khi tìm kiếm vào Table
       HangHoaSPBLL.DoDuLieuVaoJTableDonHang(rs, tbldonhang);
     }//GEN-LAST:event_jLabel46MouseClicked
+
+    private void mnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnclearActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_mnclearActionPerformed
 
     /**
      * @param args the command line arguments
