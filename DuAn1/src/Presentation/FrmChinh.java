@@ -4909,9 +4909,7 @@ public class FrmChinh extends javax.swing.JFrame {
     }//GEN-LAST:event_formWindowOpened
 
     private void tblDanhSachMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDanhSachMouseClicked
-        // TODO add your handling code here:
-      
-      
+        // TODO add your handling code here
     }//GEN-LAST:event_tblDanhSachMouseClicked
 
     private void mnCapNhatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mnCapNhatMouseClicked
