@@ -5,12 +5,15 @@
  */
 package Presentation;
 
+import BLL.HangHoaSPBLL;
 import BLL.KHBLL;
 import BLL.KhachHangBLL;
 import BLL.LoaiKHBLL;
+import BLL.LoaiSanPhamBLL;
 import BLL.SanPhamBLL;
 import DAL.KhachHangDAL;
 import DAL.SanPhamDAL;
+import DTO.LoaiSanPhamDTO;
 import DTO.SanPhamDTO;
 import java.sql.ResultSet;
 
@@ -44,6 +47,13 @@ public class FrmChinh extends javax.swing.JFrame {
         pmnTenHang = new javax.swing.JPopupMenu();
         mnLmoi = new javax.swing.JMenuItem();
         mnMota1 = new javax.swing.JMenuItem();
+        pmnnhomhang = new javax.swing.JPopupMenu();
+        mnthemnhonhang = new javax.swing.JMenuItem();
+        mnxoanhomhang = new javax.swing.JMenuItem();
+        pmndonhang = new javax.swing.JPopupMenu();
+        mnthem = new javax.swing.JMenuItem();
+        mnxoa = new javax.swing.JMenuItem();
+        mnclear = new javax.swing.JMenuItem();
         Chinh = new javax.swing.JTabbedPane();
         BanHang1 = new javax.swing.JTabbedPane();
         jpnBanHang1 = new javax.swing.JPanel();
@@ -192,14 +202,14 @@ public class FrmChinh extends javax.swing.JFrame {
         btnSua = new javax.swing.JButton();
         btnXoa = new javax.swing.JButton();
         jspNhomHang = new javax.swing.JScrollPane();
-        jTable13 = new javax.swing.JTable();
+        tblnhomhang = new javax.swing.JTable();
         btnThem1 = new javax.swing.JButton();
         btnSua1 = new javax.swing.JButton();
         btnXoa1 = new javax.swing.JButton();
         jLabel46 = new javax.swing.JLabel();
         txtTimkiem = new javax.swing.JTextField();
         jScrollPane14 = new javax.swing.JScrollPane();
-        jTable14 = new javax.swing.JTable();
+        tbldonhang = new javax.swing.JTable();
         btnBaoGia = new javax.swing.JButton();
         btnXuat = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
@@ -219,7 +229,7 @@ public class FrmChinh extends javax.swing.JFrame {
         spnngay1 = new javax.swing.JSpinner();
         jLabel52 = new javax.swing.JLabel();
         spnngaay2 = new javax.swing.JSpinner();
-        cbbthuchi = new javax.swing.JComboBox<String>();
+        cbbthuchi = new javax.swing.JComboBox<>();
         txttimkiem = new javax.swing.JTextField();
         btnin = new javax.swing.JButton();
         btnxoa1 = new javax.swing.JButton();
@@ -259,7 +269,7 @@ public class FrmChinh extends javax.swing.JFrame {
         cbkhongnhanhang = new javax.swing.JCheckBox();
         lbltongcong = new javax.swing.JLabel();
         txttongcong = new javax.swing.JTextField();
-        cbbmoney = new javax.swing.JComboBox<String>();
+        cbbmoney = new javax.swing.JComboBox<>();
         btnluu = new javax.swing.JButton();
         btnhuy = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
@@ -284,7 +294,7 @@ public class FrmChinh extends javax.swing.JFrame {
         spnngay = new javax.swing.JSpinner();
         jLabel49 = new javax.swing.JLabel();
         spnngay2 = new javax.swing.JSpinner();
-        cbbBCnhanbaohanh = new javax.swing.JComboBox<String>();
+        cbbBCnhanbaohanh = new javax.swing.JComboBox<>();
         btntim = new javax.swing.JButton();
         btnxuat = new javax.swing.JButton();
         jScrollPane17 = new javax.swing.JScrollPane();
@@ -319,7 +329,7 @@ public class FrmChinh extends javax.swing.JFrame {
         txtghichu9 = new javax.swing.JTextField();
         btnghi8 = new javax.swing.JButton();
         txtsoluong9 = new javax.swing.JTextField();
-        jComboBox10 = new javax.swing.JComboBox<String>();
+        jComboBox10 = new javax.swing.JComboBox<>();
         jPanel29 = new javax.swing.JPanel();
         lbltenkhachhang1 = new javax.swing.JLabel();
         lblmaKH1 = new javax.swing.JLabel();
@@ -343,7 +353,7 @@ public class FrmChinh extends javax.swing.JFrame {
         spngay = new javax.swing.JSpinner();
         jLabel50 = new javax.swing.JLabel();
         spngay2 = new javax.swing.JSpinner();
-        cbbbaocaoguibaohanh = new javax.swing.JComboBox<String>();
+        cbbbaocaoguibaohanh = new javax.swing.JComboBox<>();
         bttntim2 = new javax.swing.JButton();
         btnxuat2 = new javax.swing.JButton();
         jScrollPane19 = new javax.swing.JScrollPane();
@@ -361,7 +371,7 @@ public class FrmChinh extends javax.swing.JFrame {
         tbntonkho = new javax.swing.JTabbedPane();
         jPanel16 = new javax.swing.JPanel();
         jPanel17 = new javax.swing.JPanel();
-        jComboBox11 = new javax.swing.JComboBox<String>();
+        jComboBox11 = new javax.swing.JComboBox<>();
         jScrollPane20 = new javax.swing.JScrollPane();
         jTable16 = new javax.swing.JTable();
         btnintonkho = new javax.swing.JButton();
@@ -376,7 +386,7 @@ public class FrmChinh extends javax.swing.JFrame {
         spnngaykho = new javax.swing.JSpinner();
         jLabel51 = new javax.swing.JLabel();
         spnngaykho2 = new javax.swing.JSpinner();
-        cbbtonkho = new javax.swing.JComboBox<String>();
+        cbbtonkho = new javax.swing.JComboBox<>();
         btntimm = new javax.swing.JButton();
         btnxuattt = new javax.swing.JButton();
         btnxoaa = new javax.swing.JButton();
@@ -388,7 +398,7 @@ public class FrmChinh extends javax.swing.JFrame {
         tbploinhuancT = new javax.swing.JTabbedPane();
         jPanel38 = new javax.swing.JPanel();
         jPanel43 = new javax.swing.JPanel();
-        cbbngaythangnamTongquan = new javax.swing.JComboBox<String>();
+        cbbngaythangnamTongquan = new javax.swing.JComboBox<>();
         spnngaytongquan = new javax.swing.JSpinner();
         jLabel54 = new javax.swing.JLabel();
         spntongquan2 = new javax.swing.JSpinner();
@@ -409,7 +419,7 @@ public class FrmChinh extends javax.swing.JFrame {
         txttongdoanhthuchitiet = new javax.swing.JTextField();
         btnhuyloinhuan = new javax.swing.JButton();
         lnlnhanvienloinhuanCT = new javax.swing.JLabel();
-        cbbloinhuanCT = new javax.swing.JComboBox<String>();
+        cbbloinhuanCT = new javax.swing.JComboBox<>();
         txtloinhuanCT = new javax.swing.JTextField();
         lblngayloinhuan = new javax.swing.JLabel();
         jScrollPane27 = new javax.swing.JScrollPane();
@@ -425,7 +435,7 @@ public class FrmChinh extends javax.swing.JFrame {
         txttongdoanhHH = new javax.swing.JTextField();
         btnhuyloinhuanHH = new javax.swing.JButton();
         lnlnhanvienloinhuanHH = new javax.swing.JLabel();
-        cbbloinhuanHH = new javax.swing.JComboBox<String>();
+        cbbloinhuanHH = new javax.swing.JComboBox<>();
         txtloinhuanHH = new javax.swing.JTextField();
         lblngayloinhuanHH = new javax.swing.JLabel();
         jScrollPane28 = new javax.swing.JScrollPane();
@@ -454,14 +464,14 @@ public class FrmChinh extends javax.swing.JFrame {
         txttongKH = new javax.swing.JTextField();
         btnhuyloinhuanKH = new javax.swing.JButton();
         lnlnhanvienloinhuanKH = new javax.swing.JLabel();
-        cbbloinhuanKh = new javax.swing.JComboBox<String>();
+        cbbloinhuanKh = new javax.swing.JComboBox<>();
         txtloinhuanKH = new javax.swing.JTextField();
         lblngayloinhuanKH = new javax.swing.JLabel();
         jScrollPane30 = new javax.swing.JScrollPane();
         tbbloinhuanKh = new javax.swing.JTable();
         jPanel24 = new javax.swing.JPanel();
-        cbbngaythangnam = new javax.swing.JComboBox<String>();
-        cbbnhanvien = new javax.swing.JComboBox<String>();
+        cbbngaythangnam = new javax.swing.JComboBox<>();
+        cbbnhanvien = new javax.swing.JComboBox<>();
         txtnhanvien = new javax.swing.JTextField();
         spnngaydoanhthu = new javax.swing.JSpinner();
         jLabel59 = new javax.swing.JLabel();
@@ -490,9 +500,9 @@ public class FrmChinh extends javax.swing.JFrame {
         spnngaybanhang = new javax.swing.JSpinner();
         jLabel60 = new javax.swing.JLabel();
         spnbanhanng2 = new javax.swing.JSpinner();
-        cbbsapxep = new javax.swing.JComboBox<String>();
+        cbbsapxep = new javax.swing.JComboBox<>();
         lblnhanvien = new javax.swing.JLabel();
-        cbbnhanvien2 = new javax.swing.JComboBox<String>();
+        cbbnhanvien2 = new javax.swing.JComboBox<>();
         txtnhanvien2 = new javax.swing.JTextField();
         btntim2 = new javax.swing.JButton();
         btninn = new javax.swing.JButton();
@@ -517,9 +527,9 @@ public class FrmChinh extends javax.swing.JFrame {
         spnngaybanhang1 = new javax.swing.JSpinner();
         jLabel61 = new javax.swing.JLabel();
         spnbanhanng3 = new javax.swing.JSpinner();
-        cbbsapxep1 = new javax.swing.JComboBox<String>();
+        cbbsapxep1 = new javax.swing.JComboBox<>();
         lblnhanvien1 = new javax.swing.JLabel();
-        cbbnhanvien3 = new javax.swing.JComboBox<String>();
+        cbbnhanvien3 = new javax.swing.JComboBox<>();
         txtnhanvien3 = new javax.swing.JTextField();
         jScrollPane33 = new javax.swing.JScrollPane();
         tbbnhaphang = new javax.swing.JTable();
@@ -542,7 +552,7 @@ public class FrmChinh extends javax.swing.JFrame {
         btninnDSKH = new javax.swing.JButton();
         btnhuyDSKH = new javax.swing.JButton();
         lblnhanvienBHKH = new javax.swing.JLabel();
-        cbbnhanvienKHBH = new javax.swing.JComboBox<String>();
+        cbbnhanvienKHBH = new javax.swing.JComboBox<>();
         txtBHKH = new javax.swing.JTextField();
         jScrollPane34 = new javax.swing.JScrollPane();
         tbbbanhang2 = new javax.swing.JTable();
@@ -558,7 +568,7 @@ public class FrmChinh extends javax.swing.JFrame {
         btnninNHKH = new javax.swing.JButton();
         btnhuyNHKH = new javax.swing.JButton();
         lblnhanvienNHKH = new javax.swing.JLabel();
-        jComboBox12 = new javax.swing.JComboBox<String>();
+        jComboBox12 = new javax.swing.JComboBox<>();
         txtnhanvienNHKH = new javax.swing.JTextField();
         jScrollPane35 = new javax.swing.JScrollPane();
         tbbnhaphang3 = new javax.swing.JTable();
@@ -630,6 +640,46 @@ public class FrmChinh extends javax.swing.JFrame {
 
         mnMota1.setText("Mô Tả");
         pmnTenHang.add(mnMota1);
+
+        mnthemnhonhang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Upload.png"))); // NOI18N
+        mnthemnhonhang.setText("ADD");
+        mnthemnhonhang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnthemnhonhangActionPerformed(evt);
+            }
+        });
+        pmnnhomhang.add(mnthemnhonhang);
+
+        mnxoanhomhang.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/xoa.png"))); // NOI18N
+        mnxoanhomhang.setText("DELETE");
+        mnxoanhomhang.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnxoanhomhangActionPerformed(evt);
+            }
+        });
+        pmnnhomhang.add(mnxoanhomhang);
+
+        mnthem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Upload.png"))); // NOI18N
+        mnthem.setText("ADD");
+        mnthem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnthemActionPerformed(evt);
+            }
+        });
+        pmndonhang.add(mnthem);
+
+        mnxoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/xoa.png"))); // NOI18N
+        mnxoa.setText("DELETE");
+        mnxoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnxoaActionPerformed(evt);
+            }
+        });
+        pmndonhang.add(mnxoa);
+
+        mnclear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Next.png"))); // NOI18N
+        mnclear.setText("CLEAR");
+        pmndonhang.add(mnclear);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -1668,6 +1718,11 @@ public class FrmChinh extends javax.swing.JFrame {
 
         btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/1479314256_Add.png"))); // NOI18N
         btnThem.setText("Thêm");
+        btnThem.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnThemMouseClicked(evt);
+            }
+        });
         btnThem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnThemActionPerformed(evt);
@@ -1676,11 +1731,21 @@ public class FrmChinh extends javax.swing.JFrame {
 
         btnSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
         btnSua.setText("Sửa");
+        btnSua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuaActionPerformed(evt);
+            }
+        });
 
         btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/xoa.png"))); // NOI18N
         btnXoa.setText("Xóa");
+        btnXoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnXoaActionPerformed(evt);
+            }
+        });
 
-        jTable13.setModel(new javax.swing.table.DefaultTableModel(
+        tblnhomhang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
                 {null},
@@ -1691,23 +1756,47 @@ public class FrmChinh extends javax.swing.JFrame {
                 "Nhóm hàng"
             }
         ));
-        jspNhomHang.setViewportView(jTable13);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, pmnnhomhang, org.jdesktop.beansbinding.ObjectProperty.create(), tblnhomhang, org.jdesktop.beansbinding.BeanProperty.create("componentPopupMenu"));
+        bindingGroup.addBinding(binding);
+
+        jspNhomHang.setViewportView(tblnhomhang);
 
         btnThem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/1479314256_Add.png"))); // NOI18N
         btnThem1.setText("Thêm");
+        btnThem1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnThem1MouseClicked(evt);
+            }
+        });
 
         btnSua1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
         btnSua1.setText("Sửa");
+        btnSua1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSua1MouseClicked(evt);
+            }
+        });
 
         btnXoa1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/xoa.png"))); // NOI18N
         btnXoa1.setText("Xóa");
+        btnXoa1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnXoa1MouseClicked(evt);
+            }
+        });
 
         jLabel46.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Search.png"))); // NOI18N
+        jLabel46.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel46MouseClicked(evt);
+            }
+        });
 
         txtTimkiem.setText("Tìm Kiếm");
         txtTimkiem.setToolTipText("");
 
-        jTable14.setModel(new javax.swing.table.DefaultTableModel(
+        tbldonhang.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -1718,7 +1807,11 @@ public class FrmChinh extends javax.swing.JFrame {
                 "Đơn hàng", "Đơn vị", "Số lượng", "Giá mua", "Giá bán", "Bảo hành"
             }
         ));
-        jScrollPane14.setViewportView(jTable14);
+
+        binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, pmndonhang, org.jdesktop.beansbinding.ObjectProperty.create(), tbldonhang, org.jdesktop.beansbinding.BeanProperty.create("componentPopupMenu"));
+        bindingGroup.addBinding(binding);
+
+        jScrollPane14.setViewportView(tbldonhang);
 
         btnBaoGia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Upload.png"))); // NOI18N
         btnBaoGia.setText("Báo giá");
@@ -1871,7 +1964,7 @@ public class FrmChinh extends javax.swing.JFrame {
 
         jLabel52.setText("-");
 
-        cbbthuchi.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Thu-chi", "Item 2", "Item 3", "Item 4" }));
+        cbbthuchi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thu-chi", "Item 2", "Item 3", "Item 4" }));
 
         txttimkiem.setText("Tìm kiếm");
         txttimkiem.setToolTipText("Tìm kiếm");
@@ -2164,7 +2257,7 @@ public class FrmChinh extends javax.swing.JFrame {
         lbltongcong.setText("Tổng cộng:");
 
         cbbmoney.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        cbbmoney.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tiền", "Tièn" }));
+        cbbmoney.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tiền", "Tièn" }));
 
         btnluu.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnluu.setText("Lưu");
@@ -2357,7 +2450,7 @@ public class FrmChinh extends javax.swing.JFrame {
 
         jLabel49.setText("-");
 
-        cbbBCnhanbaohanh.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Chưa thanh toán", "Item 2", "Item 3", "Item 4" }));
+        cbbBCnhanbaohanh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chưa thanh toán", "Item 2", "Item 3", "Item 4" }));
 
         btntim.setText("Tìm");
 
@@ -2565,7 +2658,7 @@ public class FrmChinh extends javax.swing.JFrame {
         btnghi8.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnghi8.setText("Ghi");
 
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
         jPanel28.setLayout(jPanel28Layout);
@@ -2792,7 +2885,7 @@ public class FrmChinh extends javax.swing.JFrame {
 
         jLabel50.setText("-");
 
-        cbbbaocaoguibaohanh.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Chưa trả hàng", "Item 2", "Item 3", "Item 4" }));
+        cbbbaocaoguibaohanh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Chưa trả hàng", "Item 2", "Item 3", "Item 4" }));
 
         bttntim2.setText("Tìm");
 
@@ -2927,7 +3020,7 @@ public class FrmChinh extends javax.swing.JFrame {
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1096, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2942,7 +3035,7 @@ public class FrmChinh extends javax.swing.JFrame {
         jPanel17.setBackground(new java.awt.Color(255, 255, 255));
         jPanel17.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
-        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -3046,7 +3139,7 @@ public class FrmChinh extends javax.swing.JFrame {
 
         jLabel51.setText("-");
 
-        cbbtonkho.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Tất cả", "Item 2", "Item 3", "Item 4" }));
+        cbbtonkho.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tất cả", "Item 2", "Item 3", "Item 4" }));
 
         btntimm.setText("Tìm");
 
@@ -3126,7 +3219,7 @@ public class FrmChinh extends javax.swing.JFrame {
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tbntonkho, javax.swing.GroupLayout.DEFAULT_SIZE, 1096, Short.MAX_VALUE)
+            .addComponent(tbntonkho)
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3137,7 +3230,7 @@ public class FrmChinh extends javax.swing.JFrame {
 
         Chinh.addTab("Bảo Hành", BaoHanh);
 
-        cbbngaythangnamTongquan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Theo ngày", "Theo tháng", "Item 3", "Item 4" }));
+        cbbngaythangnamTongquan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Theo ngày", "Theo tháng", "Item 3", "Item 4" }));
 
         jLabel54.setText("-");
 
@@ -3245,7 +3338,7 @@ public class FrmChinh extends javax.swing.JFrame {
 
         lnlnhanvienloinhuanCT.setText("Nhân viên:");
 
-        cbbloinhuanCT.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbbloinhuanCT.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lblngayloinhuan.setText("Ngày:");
 
@@ -3367,7 +3460,7 @@ public class FrmChinh extends javax.swing.JFrame {
 
         lnlnhanvienloinhuanHH.setText("Nhân viên:");
 
-        cbbloinhuanHH.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbbloinhuanHH.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lblngayloinhuanHH.setText("Ngày:");
 
@@ -3586,7 +3679,7 @@ public class FrmChinh extends javax.swing.JFrame {
 
         lnlnhanvienloinhuanKH.setText("Nhân viên:");
 
-        cbbloinhuanKh.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbbloinhuanKh.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lblngayloinhuanKH.setText("Ngày:");
 
@@ -3715,9 +3808,9 @@ public class FrmChinh extends javax.swing.JFrame {
 
         ThongKe.addTab("Lợi nhuận", jPanel23);
 
-        cbbngaythangnam.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Theo ngày", "Theo tháng", "Item 3", "Item 4" }));
+        cbbngaythangnam.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Theo ngày", "Theo tháng", "Item 3", "Item 4" }));
 
-        cbbnhanvien.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nhân viên", "Item 2", "Item 3", "Item 4" }));
+        cbbnhanvien.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhân viên", "Item 2", "Item 3", "Item 4" }));
 
         jLabel59.setText("-");
 
@@ -3835,11 +3928,11 @@ public class FrmChinh extends javax.swing.JFrame {
 
         jLabel60.setText("-");
 
-        cbbsapxep.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbbsapxep.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lblnhanvien.setText("Nhân viên:");
 
-        cbbnhanvien2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nhân viên", "Item 2", "Item 3", "Item 4" }));
+        cbbnhanvien2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhân viên", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel27Layout = new javax.swing.GroupLayout(jPanel27);
         jPanel27.setLayout(jPanel27Layout);
@@ -4019,11 +4112,11 @@ public class FrmChinh extends javax.swing.JFrame {
 
         jLabel61.setText("-");
 
-        cbbsapxep1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbbsapxep1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         lblnhanvien1.setText("Nhân viên:");
 
-        cbbnhanvien3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nhân viên", "Item 2", "Item 3", "Item 4" }));
+        cbbnhanvien3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhân viên", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
@@ -4200,7 +4293,7 @@ public class FrmChinh extends javax.swing.JFrame {
 
         lblnhanvienBHKH.setText("Nhân viên:");
 
-        cbbnhanvienKHBH.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbbnhanvienKHBH.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel34Layout = new javax.swing.GroupLayout(jPanel34);
         jPanel34.setLayout(jPanel34Layout);
@@ -4314,7 +4407,7 @@ public class FrmChinh extends javax.swing.JFrame {
 
         lblnhanvienNHKH.setText("Nhân viên:");
 
-        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Nhân viên", "Item 2", "Item 3", "Item 4" }));
+        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhân viên", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel36Layout = new javax.swing.GroupLayout(jPanel36);
         jPanel36.setLayout(jPanel36Layout);
@@ -4809,14 +4902,10 @@ public class FrmChinh extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        ResultSet rs = SanPhamDAL.CauTruyvantatca();
-        SanPhamBLL.DanhSachBanHang(rs, tblDanhSach);
-        
-        ResultSet rs1 = KhachHangDAL.CauTruyvan();
-        KhachHangBLL.JTableKhachhang(rs1, tbltenHang);
-        
-         LoaiKHBLL.DoDuLieu(LoaiKHBLL.LayTatCaLoaiKH(), tblLoaiKH);
-         KHBLL.DoDuLieu(KHBLL.LayTatCaKH(), tblKH);
+   ResultSet rs = HangHoaSPBLL.LayTatCaDonhang();
+         HangHoaSPBLL.DoDuLieuVaoJTableDonHang(rs,tbldonhang);
+         ResultSet rsSanPham = HangHoaSPBLL.LayTatCaLSP();
+        HangHoaSPBLL.DoDuLieuVaoJTableDonhang(rsSanPham, tblnhomhang);
     }//GEN-LAST:event_formWindowOpened
 
     private void tblDanhSachMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDanhSachMouseClicked
@@ -4883,6 +4972,106 @@ public class FrmChinh extends javax.swing.JFrame {
        tblKH.removeRowSelectionInterval(viTriDongDcChon1, viTriDongDcChon1);
         KHBLL.RemoveRowInTable(tblKH, viTriDongDcChon1);
     }//GEN-LAST:event_btnXoaKHActionPerformed
+
+    private void mnthemnhonhangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnthemnhonhangActionPerformed
+        // TODO add your handling code here:
+         int viTriDongDuocChon = tblnhomhang.getSelectedRow();
+        String TenLLoaiSP = tblnhomhang.getValueAt(viTriDongDuocChon, 0).toString();
+          String info[] = HangHoaSPBLL.InputDialogSoLuongSanPham("Nhập thông tin sản phẩm", TenLLoaiSP);
+        if(info != null){
+            System.out.println( "Loại sản phẩm: " + info[0]);
+            LoaiSanPhamDTO DH = new LoaiSanPhamDTO();
+            LoaiSanPhamBLL.ThemLSP(DH);
+          }
+        else{
+            System.out.println("Hủy");
+        }
+    }//GEN-LAST:event_mnthemnhonhangActionPerformed
+
+    private void mnxoanhomhangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnxoanhomhangActionPerformed
+        // TODO add your handling code here:
+         int viTriDongDcChon1 = tblnhomhang.getSelectedRow();
+         // Hàm xóa các vị trí cần xóa
+       tblnhomhang.removeRowSelectionInterval(viTriDongDcChon1, viTriDongDcChon1);
+        HangHoaSPBLL.RemoveRowInTable(tblnhomhang, viTriDongDcChon1);
+    }//GEN-LAST:event_mnxoanhomhangActionPerformed
+
+    private void mnthemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnthemActionPerformed
+        // TODO add your handling code here:
+           Frmsuahanghoa frm = new Frmsuahanghoa();
+        frm.show();
+    }//GEN-LAST:event_mnthemActionPerformed
+
+    private void mnxoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnxoaActionPerformed
+        // TODO add your handling code here:
+              if(tbldonhang.equals("")){
+               MainClass.ThongBao("Bạn Đã Hủy thanh toán thành công", "Thông Báo", 1);
+         }else{
+              int viTriDongDcChon1 = tbldonhang.getSelectedRow();
+         // Hàm xóa các vị trí cần xóa
+       tblnhomhang.removeRowSelectionInterval(viTriDongDcChon1, viTriDongDcChon1);
+        HangHoaSPBLL.RemoveRowInTable(tbldonhang, viTriDongDcChon1);
+       } 
+    }//GEN-LAST:event_mnxoaActionPerformed
+
+    private void btnThemMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThemMouseClicked
+        // TODO add your handling code here:
+          if(tblnhomhang.equals("")){
+         MainClass.ThongBao("Nhập Thất Bại", "Thông Báo", WIDTH);
+        }else{
+         FrmThemLSP frm = new FrmThemLSP();
+          frm.show();
+          this.dispose();
+        }
+    }//GEN-LAST:event_btnThemMouseClicked
+
+    private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
+        // TODO add your handling code here:
+          FrmSuaLSP frm = new FrmSuaLSP();
+        frm.show();
+    }//GEN-LAST:event_btnSuaActionPerformed
+
+    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
+        // TODO add your handling code here:
+          int viTriDongDcChon1 = tblnhomhang.getSelectedRow();
+         // Hàm xóa các vị trí cần xóa
+       tblnhomhang.removeRowSelectionInterval(viTriDongDcChon1, viTriDongDcChon1);
+        HangHoaSPBLL.RemoveRowInTable(tblnhomhang, viTriDongDcChon1);
+    }//GEN-LAST:event_btnXoaActionPerformed
+
+    private void btnThem1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnThem1MouseClicked
+        // TODO add your handling code here:
+             FrmThemHangHoa frm  =new FrmThemHangHoa();
+     frm.show();
+    }//GEN-LAST:event_btnThem1MouseClicked
+
+    private void btnSua1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSua1MouseClicked
+        // TODO add your handling code here:
+           Frmsuahanghoa frm = new Frmsuahanghoa();
+        frm.show();
+    }//GEN-LAST:event_btnSua1MouseClicked
+
+    private void btnXoa1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnXoa1MouseClicked
+        // TODO add your handling code here:
+           if(tbldonhang.equals("")){
+               MainClass.ThongBao("Bạn Đã Hủy thanh toán thành công", "Thông Báo", 1);
+         }else{
+              int viTriDongDcChon1 = tbldonhang.getSelectedRow();
+         // Hàm xóa các vị trí cần xóa
+       tblnhomhang.removeRowSelectionInterval(viTriDongDcChon1, viTriDongDcChon1);
+        HangHoaSPBLL.RemoveRowInTable(tbldonhang, viTriDongDcChon1);
+      
+         }
+    }//GEN-LAST:event_btnXoa1MouseClicked
+
+    private void jLabel46MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel46MouseClicked
+        // TODO add your handling code here:
+         String tuKhoa = txttimkiem.getText();
+       //Kết quả của tìm theo từ khóa ResultSet
+        ResultSet rs = HangHoaSPBLL.LaySanPhamTheoTuKhoa(tuKhoa);
+       //gọi hàm đổ dữ liệu sau khi tìm kiếm vào Table
+      HangHoaSPBLL.DoDuLieuVaoJTableDonHang(rs, tbldonhang);
+    }//GEN-LAST:event_jLabel46MouseClicked
 
     /**
      * @param args the command line arguments
@@ -5225,8 +5414,6 @@ public class FrmChinh extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable12;
-    private javax.swing.JTable jTable13;
-    private javax.swing.JTable jTable14;
     private javax.swing.JTable jTable15;
     private javax.swing.JTable jTable16;
     private javax.swing.JTable jTable17;
@@ -5347,8 +5534,15 @@ public class FrmChinh extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnLmoi;
     private javax.swing.JMenuItem mnMota1;
     private javax.swing.JMenuItem mnXoa;
+    private javax.swing.JMenuItem mnclear;
+    private javax.swing.JMenuItem mnthem;
+    private javax.swing.JMenuItem mnthemnhonhang;
+    private javax.swing.JMenuItem mnxoa;
+    private javax.swing.JMenuItem mnxoanhomhang;
     private javax.swing.JPopupMenu pmnDanhSach;
     private javax.swing.JPopupMenu pmnTenHang;
+    private javax.swing.JPopupMenu pmndonhang;
+    private javax.swing.JPopupMenu pmnnhomhang;
     private javax.swing.JSpinner spnbanhanng2;
     private javax.swing.JSpinner spnbanhanng3;
     private javax.swing.JSpinner spnbanhanng4;
@@ -5411,6 +5605,8 @@ public class FrmChinh extends javax.swing.JFrame {
     private javax.swing.JTable tblLoaiKH;
     private javax.swing.JTable tblbangluuhang;
     private javax.swing.JTable tblbangluuhang6;
+    private javax.swing.JTable tbldonhang;
+    private javax.swing.JTable tblnhomhang;
     private javax.swing.JTable tbltenHang;
     private javax.swing.JTabbedPane tbntonkho;
     private javax.swing.JTabbedPane tbpfont2;
