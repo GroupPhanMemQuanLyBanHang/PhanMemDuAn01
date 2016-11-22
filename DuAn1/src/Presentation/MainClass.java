@@ -5,6 +5,8 @@
  */
 package Presentation;
 
+import DAL.ConnectionDB;
+
 /**
  *
  * @author Asus
@@ -14,6 +16,7 @@ public class MainClass {
     /**
      * @param args the command line arguments
      */
+    public static ConnectionDB Connection = new ConnectionDB();
     public static void main(String[] args) {
         // TODO code application logic here
         FrmChinh frm = new FrmChinh();

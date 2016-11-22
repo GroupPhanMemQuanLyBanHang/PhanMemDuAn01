@@ -1,0 +1,57 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package BLL;
+
+import DAL.SanPhamDAL;
+import DTO.SanPhamDTO;
+import Presentation.MainClass;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+/**
+ *
+ * @author Ridotoji Pham
+ */
+public class SanPhamBLL {
+    public static void DanhSachBanHang(ResultSet rs, JTable tableTam){
+        Object []objs = new Object[]{"Tên Sản Phẩm"};
+        DefaultTableModel tableModel = new DefaultTableModel(objs, 0);
+        tableTam.setModel(tableModel);
+        
+        try {
+            while(rs.next()){
+                Object[] item = new Object[1];
+                item[0] = rs.getString("TenSanPham");
+                tableModel.addRow(item);
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.toString());
+        }
+    }
+      
+    public  static boolean KiemTra(SanPhamDTO SP0){
+        boolean Ketqua = true;
+        if(SP0.getEmail().equals(Ketqua)){
+           System.out.println("Please In Print ");
+           return  false;
+        }
+        return Ketqua;
+   }
+  public  static void ThemSP(SanPhamDTO SP0){
+       boolean Ketqua = KiemTra(SP0);
+       if (Ketqua) {
+          SanPhamDAL.CauTruyVanThemSP(SP0);
+      }
+  }
+    public static void HienThitatca(SanPhamDTO SP) {
+          boolean Ketqua = KiemTra(SP);
+       if (Ketqua) {
+          SanPhamDAL.CauTruyvantatca();
+      }
+    }
+}
